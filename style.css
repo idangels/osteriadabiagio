@@ -13,7 +13,7 @@ li {
 body {
     font-family: 'Helvetica', sans-serif;
     /* Using a more web-friendly font */
-    background-color: #f8f8f8;
+    background-color: #008000; /* Verde */
     color: #333;
     line-height: 1.6;
 }
