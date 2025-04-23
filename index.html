@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteria da Biagio - Ristorante Toscano</title>
+    <style>
+		 <link rel="stylesheet" href="style.css">
+        /* Qui metteremo i CSS per lo stile del sito. Per ora, uno stile di base */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        main {
+            padding: 1em;
+            background-color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 1em;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 1em;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: auto;
+            margin: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="img/logo.jpg" class="logo">
+		<h1>Osteria da Biagio</h1>
+        <p>Autentica cucina toscana a San Giuliano Terme</p>
+    </header>
+
+    <nav>
+        <a href="#chi-siamo">Chi Siamo</a> |
+        <a href="#menu">Menù</a> |
+        <a href="#prenotazioni">Prenotazioni</a> |
+        <a href="#galleria">Galleria</a> |
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <main>
+        <section id="chi-siamo">
+            <h2>Chi Siamo</h2>
+            <p>
+                L'Osteria da Biagio è un ristorante a conduzione familiare situato nel cuore di San Giuliano Terme,
+                alle porte di Pisa. Offriamo un'esperienza culinaria autentica, con piatti della tradizione toscana
+                preparati con ingredienti freschi e di stagione. La nostra passione per la buona cucina e l'ospitalità
+                vi farà sentire come a casa.
+            </p>
+        </section>
+
+        <section id="menu">
+            <h2>Menù</h2>
+
+            <h3>Antipasti</h3>
+            <div class="menu-item">
+                <h4>Tagliere Toscano (1,7)</h4>
+                <p>Selezione di salumi e formaggi tipici della Toscana accompagnati da bruschettine al pomodoro - €18,00</p>
+            </div>
+            <div class="menu-item">
+                <h4>Caprese di Bufala (7)</h4>
+                <p>Mozzarella di bufala, pomodori e condita con olio di basilico - €10,00</p>
+            </div>
+            <h3>Primi Piatti</h3>
+            <div class="menu-item">
+                <h4>Pappardelle al Cinghiale (1,3,6,9,10)</h4>
+                <p>Pappardelle fresche con ragù bianco di cinghiale stufato in vino rosso e spezie - €16,00</p>
+            </div>
+            <div class="menu-item">
+                <h4>Spaghetti alla Carbonara (1,3,7,6,10)</h4>
+                <p>Spaghetti con guanciale, pecorino romano, uova e pepe nero - €14,00</p>
+            </div>
+            </section>
+
+        <section id="prenotazioni">
+            <h2>Prenotazioni</h2>
+            <p>
+                Per prenotare un tavolo, chiamaci al numero <a href="tel:+393382976669">+39 338 297 6669</a>.
+                Presto sarà disponibile anche la prenotazione online.
+            </p>
+            </section>
+
+        <section id="galleria">
+            <h2>Galleria Fotografica</h2>
+            <div class="gallery">
+                <img src="img/interno.jpg" alt="Interno del ristorante">
+                <img src="img/logo.jpg" alt="Logo">
+                </div>
+        </section>
+
+        <section id="contatti">
+            <h2>Contatti</h2>
+            <div class="contact-info">
+                <p>
+                    <strong>Indirizzo:</strong> Via Sant'Elena, 45, 56017 San Giuliano Terme (Pisa)
+                </p>
+                <p>
+                    <strong>Telefono:</strong> <a href="tel:+393382976669">+39 338 297 6669</a>
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:osteriadabiagiopisa@gmail.com">osteriadabiagiopisa@gmail.com</a>
+                </p>
+            </div>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Osteria da Biagio | Seguici su Instagram: <a href="https://www.instagram.com/osteriadabiagiopisa/"
+                target="_blank">@osteriadabiagiopisa</a></p>
+    </footer>
+
+</body>
+ <!-- <script src="script.js"></script> -->
+
+</html>
