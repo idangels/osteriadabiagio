@@ -1,105 +1,110 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osteria da Biagio - Ristorante Toscano
-	</title>
-	<link rel="stylesheet" href="style.css">	
-    <style>
-		/* Qui metteremo i CSS per lo stile del sito. Per ora, uno stile di base */
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Osteria da Biagio - Cucina Toscana a San Giuliano Terme</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <header>
+    <img src="img/logo.jpg" class="logo" alt="Logo Osteria da Biagio" />
+    <h1>Osteria da Biagio</h1>
+    <p data-key="sottotitolo">Un angolo di Toscana immerso nel verde, dove la cucina tipica incontra l’atmosfera rilassante dei Monti Pisani.</p>
+  </header>
 
-    <header>
-        <img src="img/logo.jpg" class="logo">
-		<h1>Osteria da Biagio</h1>
-        <p>Autentica cucina toscana a San Giuliano Terme</p>
-    </header>
+  <nav>
+    <a href="#chi-siamo" data-key="nav-chi">Chi Siamo</a>
+    <a href="#menu" data-key="nav-menu">Menù</a>
+    <a href="#prenotazioni" data-key="nav-prenota">Prenotazioni</a>
+    <a href="#contatti" data-key="nav-contatti">Contatti</a>
+    <select id="lang-switcher">
+      <option value="it" selected>IT</option>
+      <option value="en">EN</option>
+      <option value="de">DE</option>
+      <option value="fr">FR</option>
+      <option value="es">ES</option>
+    </select>
+  </nav>
 
-    <nav>
-        <a href="#chi-siamo">Chi Siamo</a> |
-        <a href="#menu">Menù</a> |
-        <a href="#prenotazioni">Prenotazioni</a> |
-        <a href="#galleria">Galleria</a> |
-        <a href="#contatti">Contatti</a>
-    </nav>
+  <main>
+    <section id="chi-siamo">
+      <h2 data-key="chi-siamo-titolo">Chi Siamo</h2>
+      <p data-key="chi-siamo-testo">
+        Situata nel verde di Asciano (San Giuliano Terme), l’Osteria da Biagio accoglie i suoi ospiti in una location rilassante e immersa nella natura. I piatti proposti sono un tributo alla tradizione toscana, preparati con ingredienti locali, stagionali e di qualità. L’osteria è il luogo ideale per gustare pappardelle al cinghiale, pinse artigianali, dolci della casa e vini selezionati.
+      </p>
+    </section>
 
-    <main>
-        <section id="chi-siamo">
-            <h2>Chi Siamo</h2>
-            <p>
-                L'Osteria da Biagio è un ristorante a conduzione familiare situato nel cuore di San Giuliano Terme,
-                alle porte di Pisa. Offriamo un'esperienza culinaria autentica, con piatti della tradizione toscana
-                preparati con ingredienti freschi e di stagione. La nostra passione per la buona cucina e l'ospitalità
-                vi farà sentire come a casa.
-            </p>
-        </section>
+    <section id="menu">
+      <h2 data-key="menu-titolo">Menù</h2>
+      <div class="menu-section" data-key="menu-content">
+        <!-- Contenuto in italiano mostrato all’avvio -->
+        <h3>Antipasti</h3>
+        <ul>
+          <li><strong>Tagliere Toscano</strong> – Salumi e formaggi – €18</li>
+          <li><strong>Caprese</strong> – Mozzarella e pomodori – €10</li>
+        </ul>
+        <h3>Primi</h3>
+        <ul>
+          <li><strong>Pappardelle al Cinghiale</strong> – Ragù bianco – €16</li>
+          <li><strong>Carbonara</strong> – Guanciale, pecorino – €14</li>
+        </ul>
+      </div>
+    </section>
 
-        <section id="menu">
-            <h2>Menù</h2>
+    <section id="prenotazioni">
+      <h2 data-key="prenota-titolo">Prenota un tavolo</h2>
+      <form>
+        <label for="name" data-key="prenota-nome">Nome:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="phone" data-key="prenota-telefono">Telefono:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <label for="date" data-key="prenota-data">Data:</label>
+        <input type="date" id="date" name="date" required />
+        <label for="time" data-key="prenota-ora">Ora:</label>
+        <input type="time" id="time" name="time" required />
+        <label for="people" data-key="prenota-persone">Numero di persone:</label>
+        <input type="number" id="people" name="people" min="1" max="20" required />
+        <button type="submit" data-key="prenota-btn">Invia richiesta</button>
+      </form>
+    </section>
 
-            <h3>Antipasti</h3>
-            <div class="menu-item">
-                <h4>Tagliere Toscano (1,7)</h4>
-                <p>Selezione di salumi e formaggi tipici della Toscana accompagnati da bruschettine al pomodoro - €18,00</p>
-            </div>
-            <div class="menu-item">
-                <h4>Caprese di Bufala (7)</h4>
-                <p>Mozzarella di bufala, pomodori e condita con olio di basilico - €10,00</p>
-            </div>
-            <h3>Primi Piatti</h3>
-            <div class="menu-item">
-                <h4>Pappardelle al Cinghiale (1,3,6,9,10)</h4>
-                <p>Pappardelle fresche con ragù bianco di cinghiale stufato in vino rosso e spezie - €16,00</p>
-            </div>
-            <div class="menu-item">
-                <h4>Spaghetti alla Carbonara (1,3,7,6,10)</h4>
-                <p>Spaghetti con guanciale, pecorino romano, uova e pepe nero - €14,00</p>
-            </div>
-            </section>
+    <section id="contatti">
+      <h2 data-key="contatti-titolo">Contatti</h2>
+      <p><strong data-key="contatti-indirizzo-label">Indirizzo:</strong> Via Sant'Elena 45, Asciano, San Giuliano Terme (PI)</p>
+      <p><strong data-key="contatti-telefono-label">Telefono:</strong> <a href="tel:+393382976669">+39 338 297 6669</a></p>
+      <p><strong data-key="contatti-email-label">Email:</strong> <a href="mailto:osteriadabiagiopisa@gmail.com">osteriadabiagiopisa@gmail.com</a></p>
+      <p><strong data-key="contatti-instagram-label">Instagram:</strong> <a href="https://www.instagram.com/osteriadabiagiopisa/" target="_blank">@osteriadabiagiopisa</a></p>
+    </section>
+  </main>
 
-        <section id="prenotazioni">
-            <h2>Prenotazioni</h2>
-            <p>
-                Per prenotare un tavolo, chiamaci al numero <a href="tel:+393382976669">+39 338 297 6669</a>.
-                Presto sarà disponibile anche la prenotazione online.
-            </p>
-            </section>
+  <footer>
+    <p data-key="footer">© 2024 Osteria da Biagio - Tutti i diritti riservati</p>
+  </footer>
 
-        <section id="galleria">
-            <h2>Galleria Fotografica</h2>
-            <div class="gallery">
-                <img src="img/interno.jpg" alt="Interno del ristorante">
-                <img src="img/logo.jpg" alt="Logo">
-                </div>
-        </section>
-
-        <section id="contatti">
-            <h2>Contatti</h2>
-            <div class="contact-info">
-                <p>
-                    <strong>Indirizzo:</strong> Via Sant'Elena, 45, 56017 San Giuliano Terme (Pisa)
-                </p>
-                <p>
-                    <strong>Telefono:</strong> <a href="tel:+393382976669">+39 338 297 6669</a>
-                </p>
-                <p>
-                    <strong>Email:</strong> <a href="mailto:osteriadabiagiopisa@gmail.com">osteriadabiagiopisa@gmail.com</a>
-                </p>
-            </div>
-            </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Osteria da Biagio | Seguici su Instagram: <a href="https://www.instagram.com/osteriadabiagiopisa/"
-                target="_blank">@osteriadabiagiopisa</a></p>
-    </footer>
-
+  <script src="lang-data.js"></script>
+  <script>
+    const langSwitcher = document.getElementById('lang-switcher');
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        const translation = langData[lang][key];
+        if (translation) {
+          if (key === "menu-content") {
+            el.innerHTML = translation;
+          } else {
+            el.textContent = translation;
+          }
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguage('it'); // lingua di default
+    });
+    langSwitcher.addEventListener('change', () => {
+      updateLanguage(langSwitcher.value);
+    });
+  </script>
 </body>
- <!-- <script src="script.js"></script> -->
-
 </html>
