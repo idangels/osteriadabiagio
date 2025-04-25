@@ -16,7 +16,6 @@
 
   <nav>
     <a href="#chi-siamo" data-key="nav-chi">Chi Siamo</a>
-    <a href="#menu" data-key="nav-menu">Menù</a>
     <a href="#prenotazioni" data-key="nav-prenota">Prenotazioni</a>
     <a href="#contatti" data-key="nav-contatti">Contatti</a>
     <select id="lang-switcher">
@@ -28,6 +27,37 @@
     </select>
   </nav>
 
+  <!-- Bottone laterale per aprire il menù -->
+  <button id="menu-toggle" aria-label="Apri il menù">🍴 Menù</button>
+  <div id="drawer-overlay"></div>
+
+  <!-- Drawer laterale per il menù -->
+  <div id="menuDrawer">
+    <div id="menu" class="menu-section">
+      <h2 data-key="menu-titolo">Menù</h2>
+      <h3>Antipasti</h3>
+      <ul>
+        <li><strong>Tagliere Toscano</strong> – Salumi e formaggi – €18</li>
+        <li><strong>Caprese</strong> – Mozzarella e pomodori – €10</li>
+      </ul>
+      <h3>Primi</h3>
+      <ul>
+        <li><strong>Pappardelle al Cinghiale</strong> – Ragù bianco – €16</li>
+        <li><strong>Carbonara</strong> – Guanciale, pecorino – €14</li>
+      </ul>
+      <h3>Secondi</h3>
+      <ul>
+        <li><strong>Fiorentina</strong> – Bistecca alla fiorentina – €30</li>
+        <li><strong>Involtini di Manzo</strong> – Con verdure grigliate – €22</li>
+      </ul>
+      <h3>Dolci</h3>
+      <ul>
+        <li><strong>Tiramisu</strong> – Tradizionale – €8</li>
+        <li><strong>Crostata di Frutta</strong> – Con crema pasticcera – €6</li>
+      </ul>
+    </div>
+  </div>
+
   <main>
     <section id="chi-siamo">
       <h2 data-key="chi-siamo-titolo">Chi Siamo</h2>
@@ -36,34 +66,12 @@
       </p>
     </section>
 
-    <section id="menu">
-      <h2 data-key="menu-titolo">Menù</h2>
-      <div class="menu-section" data-key="menu-content">
-        <!-- Contenuto in italiano mostrato all’avvio -->
-        <h3>Antipasti</h3>
-        <ul>
-          <li><strong>Tagliere Toscano</strong> – Salumi e formaggi – €18</li>
-          <li><strong>Caprese</strong> – Mozzarella e pomodori – €10</li>
-        </ul>
-        <h3>Primi</h3>
-        <ul>
-          <li><strong>Pappardelle al Cinghiale</strong> – Ragù bianco – €16</li>
-          <li><strong>Carbonara</strong> – Guanciale, pecorino – €14</li>
-        </ul>
-      </div>
+    <section id="prenotazioni">
+      <h2 data-key="prenota-titolo">Prenota un tavolo</h2>
+      <p>Prenota direttamente tramite Google per una conferma immediata!</p>
+      <a href="https://www.google.com/maps/reserve/v/dine/c/S2ajXukyic4?source=pa&opi=89978449&hl=it-IT&gei=8B0KaPuMH6qKi-gPp46jgQw" class="btn" target="_blank">Prenota tramite Google</a>
+      <p style="font-size: small; margin-top: 10px;">Per richieste speciali, consulta la <a href="#contatti">sezione contatti</a>.</p>
     </section>
-
-<section id="prenotazioni">
-  <h2 data-key="prenota-titolo">Prenota un tavolo</h2>
-  <p>Prenota direttamente tramite Google per una conferma immediata!</p>
-<a 
-  href="https://www.google.com/maps/reserve/v/dine/c/S2ajXukyic4?source=pa&opi=89978449&hl=it-IT&gei=8B0KaPuMH6qKi-gPp46jgQw
-  &sourceurl=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3DOsteria%2Bda%2BBiagio%2BAsciano%2BSan%2BGiuliano%2BTerme%26sei%3D7x0KaLvROZiKxc8PxNmV2Ao&ihs=1" 
-  class="btn" target="_blank">
-  Prenota tramite Google
-</a>
-  <p style="font-size: small; margin-top: 10px;">Per richieste speciali, consulta la <a href="#contatti">sezione contatti</a>.</p>
-</section>
 
     <section id="contatti">
       <h2 data-key="contatti-titolo">Contatti</h2>
@@ -78,28 +86,11 @@
     <p data-key="footer">© 2024 Osteria da Biagio - Tutti i diritti riservati</p>
   </footer>
 
+  <!-- Script per la gestione delle lingue -->
   <script src="lang-data.js"></script>
-  <script>
-    const langSwitcher = document.getElementById('lang-switcher');
-    function updateLanguage(lang) {
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        const translation = langData[lang][key];
-        if (translation) {
-          if (key === "menu-content") {
-            el.innerHTML = translation;
-          } else {
-            el.textContent = translation;
-          }
-        }
-      });
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      updateLanguage('it'); // lingua di default
-    });
-    langSwitcher.addEventListener('change', () => {
-      updateLanguage(langSwitcher.value);
-    });
-  </script>
+
+  <!-- Script per il menu laterale -->
+  <script src="menu.js"></script>
+
 </body>
 </html>

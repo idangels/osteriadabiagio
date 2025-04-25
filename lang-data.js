@@ -1,4 +1,3 @@
-
 const langData = {
   it: {
     "sottotitolo": "Un angolo di Toscana immerso nel verde, dove la cucina tipica incontra l’atmosfera rilassante dei Monti Pisani.",
@@ -34,6 +33,8 @@ const langData = {
       <h3>Bevande</h3><ul>
         <li><strong>Acqua</strong> – €2</li>
         <li><strong>Vino della casa</strong> – da €13</li>
+		<li><strong></strong></li>
+		<li><strong></strong></li>
       </ul>
     `,
     "prenota-titolo": "Prenota un tavolo",
@@ -85,6 +86,8 @@ const langData = {
       <h3>Drinks</h3><ul>
         <li><strong>Water</strong> – €2</li>
         <li><strong>House wine</strong> – from €13</li>
+		<li><strong></strong></li>
+		<li><strong></strong></li>
       </ul>
     `,
     "prenota-titolo": "Book a table",
@@ -138,6 +141,8 @@ const langData = {
       <h3>Boissons</h3><ul>
         <li><strong>Eau</strong> – €2</li>
         <li><strong>Vin maison</strong> – à partir de €13</li>
+		<li><strong></strong></li>
+		<li><strong></strong></li>
       </ul>
     `,
     "prenota-titolo": "Réserver une table",
@@ -189,6 +194,8 @@ const langData = {
       <h3>Getränke</h3><ul>
         <li><strong>Wasser</strong> – €2</li>
         <li><strong>Hauswein</strong> – ab €13</li>
+		<li><strong></strong></li>
+		<li><strong></strong></li>
       </ul>
     `,
     "prenota-titolo": "Tisch reservieren",
@@ -240,6 +247,8 @@ const langData = {
       <h3>Bebidas</h3><ul>
         <li><strong>Agua</strong> – €2</li>
         <li><strong>Vino de la casa</strong> – desde €13</li>
+		<li><strong></strong></li>
+		<li><strong></strong></li>
       </ul>
     `,
     "prenota-titolo": "Reservar una mesa",
@@ -257,4 +266,33 @@ const langData = {
     "footer": "© 2024 Osteria da Biagio - Todos los derechos reservados"
   }
 
+};
+
+// Funzione per cambiare la lingua
+function changeLanguage(language) {
+  // Recupera il data-key di tutti gli elementi da tradurre
+  document.querySelectorAll('[data-key]').forEach((element) => {
+    const key = element.getAttribute('data-key');
+    if (langData[language] && langData[language][key]) {
+      element.innerHTML = langData[language][key];
+    }
+  });
+
+  // Cambia il contenuto del menu
+  const menuContent = document.querySelector("#menu");
+  if (langData[language] && langData[language]["menu-content"]) {
+    menuContent.innerHTML = langData[language]["menu-content"];
+  }
+}
+
+// Aggiungi un listener per il cambio lingua
+document.getElementById("lang-switcher").addEventListener("change", function (event) {
+  const selectedLang = event.target.value;
+  changeLanguage(selectedLang);
+});
+
+// Carica la lingua predefinita al caricamento della pagina
+window.onload = function () {
+  const defaultLang = document.getElementById("lang-switcher").value;
+  changeLanguage(defaultLang);
 };
