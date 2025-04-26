@@ -22,9 +22,11 @@ const langData = {
         <li><strong>Tonno Scottato</strong> – Verdure grigliate – €18</li>
       </ul>
       <h3>Pinse</h3><ul>
-        <li><strong>Margherita</strong> – Pomodoro e mozzarella – €10</li>
-        <li><strong>Crudo e Grana</strong> – Prosciutto e scaglie – €13</li>
-        <li><strong>Pistacchiosa</strong> – Mortadella e burrata – €14</li>
+        <li><strong>Margherita</strong> – Mozzarella, pomodoro, origano e olio  EVO – €10</li>
+		<li><strong>Vegetariana</strong> – Mozzarella, pomodoro, zucchine, pomodorini e olio di basilico – €11</li>
+        <li><strong>Crudo e Grana</strong> – Mozzarella, pomodoro, prosciutto crudo di Parma, rucola, Grana e olio di basilico – €13</li>
+		<li><strong>Quattro Formaggi</strong> – Mozzarella, gorgonzola, Grana Padano, scamorza affumicata – €13</li>
+        <li><strong>Pistacchiosa</strong> – Mozzarella, mortadella, crema di pistacchio, burrata, olio di basilico – €14</li>
       </ul>
       <h3>Dolci</h3><ul>
         <li><strong>Tiramisù</strong> – €6</li>
@@ -76,9 +78,11 @@ const langData = {
         <li><strong>Seared Tuna</strong> – With grilled vegetables – €18</li>
       </ul>
       <h3>Pinse</h3><ul>
-        <li><strong>Margherita</strong> – Tomato and mozzarella – €10</li>
-        <li><strong>Prosciutto & Grana</strong> – Ham and cheese shavings – €13</li>
-        <li><strong>Pistachio</strong> – Mortadella and burrata – €14</li>
+        <li><strong>Margherita</strong> – Mozzarella, tomato, oregano, extra virgin olive oil – €10</li>
+		<li><strong>Vegetariana</strong> – Mozzarella, tomato, zucchini, cherry tomatoes, basil oil – €11</li>
+        <li><strong>Crudo e Grana</strong> – Mozzarella, tomato, Parma ham, arugula, Grana Padano, basil oil – €13</li>
+		<li><strong>Quattro Formaggi</strong> – Mozzarella, blue cheese, Grana Padano, smoked scamorza – €13</li>
+        <li><strong>Pistacchiosa</strong> – Mozzarella, mortadella, pistachio cream, burrata, basil oil – €14</li>
       </ul>
       <h3>Desserts</h3><ul>
         <li><strong>Tiramisu</strong> – €6</li>
@@ -130,9 +134,11 @@ const langData = {
         <li><strong>Thon grillé</strong> – Légumes grillés – €18</li>
       </ul>
       <h3>Pinse</h3><ul>
-        <li><strong>Margherita</strong> – Tomates et mozzarella – €10</li>
-        <li><strong>Jambon & Grana</strong> – €13</li>
-        <li><strong>Pistache</strong> – Mortadelle et burrata – €14</li>
+        <li><strong>Margherita</strong> – Mozzarella, tomate, origan, huile d'olive extra vierge – €10</li>
+		<li><strong>Vegetariana</strong> – Mozzarella, tomate, courgette, tomates cerises, huile au basilic – €11</li>
+        <li><strong>Crudo e Grana</strong> – Mozzarella, tomate, jambon cru de Parme, roquette, Grana Padano, huile de basilic – €13</li>
+		<li><strong>Quattro Formaggi</strong> – Mozzarella, formage blue, Grana Padano, scamorza fumée – €13</li>
+        <li><strong>Pistacchiosa</strong> – Mozzarella, mortadelle, crème de pistache, burrata, huile de basilic – €14</li>
       </ul>
       <h3>Desserts</h3><ul>
         <li><strong>Tiramisu</strong> – €6</li>
@@ -184,9 +190,11 @@ const langData = {
         <li><strong>Thunfisch</strong> – Mit gegrilltem Gemüse – €18</li>
       </ul>
       <h3>Pinse</h3><ul>
-        <li><strong>Margherita</strong> – Tomaten und Mozzarella – €10</li>
-        <li><strong>Schinken & Grana</strong> – €13</li>
-        <li><strong>Pistazie</strong> – Mortadella und Burrata – €14</li>
+        <li><strong>Margherita</strong> – Mozzarella, Tomate, Oregano, Olivenöl – €10</li>
+		<li><strong>Vegetariana</strong> – Mozzarella, Tomate, Zucchini, Kirschtomaten, Basilikumöl – €11</li>
+        <li><strong>Crudo e Grana</strong> – Mozzarella, Tomate, Parmaschinken, Rucola, Grana Padano,Basilikumöl – €13</li>
+		<li><strong>Quattro Formaggi</strong> – Mozzarella, Gorgonzola, Grana Padano, geräucherte Scamorza – €13</li>
+        <li><strong>Pistacchiosa</strong> – Mozzarella, Mortadella, Pistaziencreme, Burrata, Basilikumöl – €14</li>
       </ul>
       <h3>Desserts</h3><ul>
         <li><strong>Tiramisu</strong> – €6</li>
@@ -238,9 +246,11 @@ const langData = {
         <li><strong>Atún a la plancha</strong> – Verduras a la parrilla – €18</li>
       </ul>
       <h3>Pinse</h3><ul>
-        <li><strong>Margherita</strong> – Tomate y mozzarella – €10</li>
-        <li><strong>Jamón y Grana</strong> – €13</li>
-        <li><strong>Pistacho</strong> – Mortadela y burrata – €14</li>
+        <li><strong>Margherita</strong> – Mozzarella, tomate, orégano, aceite de oliva virgen extra – €10</li>
+		<li><strong>Vegetariana</strong> – Mozzarella, tomate, calabacín, tomates cherry, aceite de albahaca – €11</li>
+        <li><strong>Crudo e Grana</strong> – Mozzarella, tomate, jamón crudo de Parma, rúcula, Grana Padano, aceite de albahaca – €13</li>
+		<li><strong>Quattro Formaggi</strong> – Mozzarella, gorgonzola, Grana Padano, scamorza ahumada – €13</li>
+        <li><strong>Pistacchiosa</strong> – Mozzarella, mortadela, crema de pistacho, burrata, aceite de albahaca – €14</li>
       </ul>
       <h3>Postres</h3><ul>
         <li><strong>Tiramisú</strong> – €6</li>
