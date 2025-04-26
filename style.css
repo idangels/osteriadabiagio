@@ -143,7 +143,7 @@ footer {
   z-index: 9999;
   padding: 20px;
   overflow-y: auto; /* Permette lo scorrimento verticale */
-  min-height: 100%; /* Forza una lunghezza minima per il drawer, così se non c'è abbastanza contenuto si adatta alla finestra */
+  min-height: 100vh; /* Forza una lunghezza minima per il drawer, così se non c'è abbastanza contenuto si adatta alla finestra */
 }
 
 /* Quando il menu è visibile */
@@ -178,6 +178,7 @@ footer {
   padding: 20px;
   color: #f0f0f0; /* Colore chiaro del testo */
   font-size: 16px;
+  overflow-y: auto; /* Permette lo scorrimento solo dentro il contenuto */
 }
 
 /* Colore dei link nel drawer */

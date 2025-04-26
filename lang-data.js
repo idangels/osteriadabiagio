@@ -37,6 +37,7 @@ const langData = {
 		<li><strong></strong></li>
       </ul>
     `,
+    "prenota-intro": "Per prenotare compila il modulo oppure usa uno dei nostri <a href='#contatti'>contatti</a>!",
     "prenota-titolo": "Prenota un tavolo",
     "prenota-nome": "Nome:",
     "prenota-telefono": "Telefono:",
@@ -90,6 +91,7 @@ const langData = {
 		<li><strong></strong></li>
       </ul>
     `,
+    "prenota-intro": "To book, fill out the form or use one of our <a href='#contatti'>contacts</a>!",
     "prenota-titolo": "Book a table",
     "prenota-nome": "Name:",
     "prenota-telefono": "Phone:",
@@ -103,10 +105,8 @@ const langData = {
     "contatti-email-label": "Email:",
     "contatti-instagram-label": "Instagram:",
     "footer": "© 2024 Osteria da Biagio - All rights reserved"
-  }
+  },
 
-  
-  ,
   fr: {
     "sottotitolo": "Un coin de Toscane immergé dans la verdure, où la cuisine locale rencontre l'atmosphère apaisante des collines pisanes.",
     "nav-chi": "À propos",
@@ -145,6 +145,7 @@ const langData = {
 		<li><strong></strong></li>
       </ul>
     `,
+    "prenota-intro": "Pour réserver, remplissez le formulaire ou utilisez l'un de nos <a href='#contatti'>moyens de contact</a>!",
     "prenota-titolo": "Réserver une table",
     "prenota-nome": "Nom:",
     "prenota-telefono": "Téléphone:",
@@ -198,6 +199,7 @@ const langData = {
 		<li><strong></strong></li>
       </ul>
     `,
+    "prenota-intro": "Um zu reservieren, füllen Sie das Formular aus oder nutzen Sie einen unserer <a href='#contatti'>Kontaktwege</a>!",
     "prenota-titolo": "Tisch reservieren",
     "prenota-nome": "Name:",
     "prenota-telefono": "Telefon:",
@@ -251,6 +253,7 @@ const langData = {
 		<li><strong></strong></li>
       </ul>
     `,
+    "prenota-intro": "Para reservar, rellena el formulario o utiliza uno de nuestros <a href='#contatti'>medios de contacto</a>!",
     "prenota-titolo": "Reservar una mesa",
     "prenota-nome": "Nombre:",
     "prenota-telefono": "Teléfono:",
@@ -265,7 +268,6 @@ const langData = {
     "contatti-instagram-label": "Instagram:",
     "footer": "© 2024 Osteria da Biagio - Todos los derechos reservados"
   }
-
 };
 
 // Funzione per cambiare la lingua

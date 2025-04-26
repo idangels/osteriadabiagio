@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richiesta di Prenotazione Inviata</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main style="text-align: center; padding: 2em;">
+    <h1 data-key="success-titolo">Grazie per la tua richiesta!</h1>
+    <p data-key="success-testo1">Abbiamo ricevuto la tua richiesta di prenotazione.</p>
+    <p data-key="success-testo2"><strong>Ti invieremo una conferma via email o ti contatteremo telefonicamente al più presto.</strong></p>
+    <p data-key="success-testo3">La prenotazione sarà valida solo dopo nostra conferma.</p>
+    <a href="index.html" class="btn" data-key="success-btn">Torna al sito</a>
+  </main>
+
+  <script>
+    const langData = {
+      it: {
+        "success-titolo": "Grazie per la tua richiesta!",
+        "success-testo1": "Abbiamo ricevuto la tua richiesta di prenotazione.",
+        "success-testo2": "Ti invieremo una conferma via email o ti contatteremo telefonicamente al più presto.",
+        "success-testo3": "La prenotazione sarà valida solo dopo nostra conferma.",
+        "success-btn": "Torna al sito"
+      },
+      en: {
+        "success-titolo": "Thank you for your request!",
+        "success-testo1": "We have received your booking request.",
+        "success-testo2": "We will send you a confirmation by email or contact you by phone as soon as possible.",
+        "success-testo3": "The booking will be valid only after our confirmation.",
+        "success-btn": "Back to website"
+      },
+      fr: {
+        "success-titolo": "Merci pour votre demande !",
+        "success-testo1": "Nous avons reçu votre demande de réservation.",
+        "success-testo2": "Nous vous enverrons une confirmation par e-mail ou vous contacterons par téléphone dès que possible.",
+        "success-testo3": "La réservation sera valide uniquement après notre confirmation.",
+        "success-btn": "Retour au site"
+      },
+      de: {
+        "success-titolo": "Vielen Dank für Ihre Anfrage!",
+        "success-testo1": "Wir haben Ihre Reservierungsanfrage erhalten.",
+        "success-testo2": "Wir senden Ihnen eine Bestätigung per E-Mail oder kontaktieren Sie telefonisch so schnell wie möglich.",
+        "success-testo3": "Die Reservierung ist erst nach unserer Bestätigung gültig.",
+        "success-btn": "Zurück zur Website"
+      },
+      es: {
+        "success-titolo": "¡Gracias por tu solicitud!",
+        "success-testo1": "Hemos recibido tu solicitud de reserva.",
+        "success-testo2": "Te enviaremos una confirmación por correo electrónico o te contactaremos por teléfono lo antes posible.",
+        "success-testo3": "La reserva será válida solo después de nuestra confirmación.",
+        "success-btn": "Volver al sitio"
+      }
+    };
+
+    function getLangFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('lang') || 'it';
+    }
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (langData[lang] && langData[lang][key]) {
+          el.textContent = langData[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = getLangFromUrl();
+      updateLanguage(lang);
+    });
+  </script>
+</body>
+</html>
