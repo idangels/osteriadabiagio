@@ -1,4 +1,4 @@
-/* Reset base */
+/* RESET BASE */
 body, h1, h2, h3, p, ul, li, input, label {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   padding: 0 1em;
 }
 
-/* Header */
+/* HEADER */
 header {
   background: linear-gradient(135deg, #d6e3d3, #f0f5ec);
   text-align: center;
@@ -40,7 +40,7 @@ header p {
   color: #566b56;
 }
 
-/* Navigazione */
+/* NAVIGAZIONE */
 nav {
   background-color: #a2b79f;
   text-align: center;
@@ -66,7 +66,7 @@ nav select {
   border: none;
 }
 
-/* Sezioni principali */
+/* MAIN */
 main {
   max-width: 1000px;
   margin: auto;
@@ -83,6 +83,7 @@ h2 {
   border-bottom: 2px solid #a2b79f;
 }
 
+/* MENU SEZIONI */
 .menu-section ul {
   list-style: none;
   padding-left: 0;
@@ -93,7 +94,7 @@ h2 {
   border-bottom: 1px dashed #ccc;
 }
 
-/* Form prenotazione */
+/* FORM PRENOTAZIONE */
 form {
   display: grid;
   gap: 1em;
@@ -122,7 +123,7 @@ form button:hover {
   background-color: #557662;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1em 0;
@@ -131,26 +132,24 @@ footer {
   margin-top: 2em;
 }
 
-/* Stili per il drawer laterale */
+/* DRAWER LATERALE */
 #menuDrawer {
   position: fixed;
   top: 0;
-  left: -100%; /* Inizialmente nascosto a sinistra */
+  left: 0;
+  transform: translateX(-100%);
   width: 250px;
   height: 100%;
   background-color: #333;
-  transition: left 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   z-index: 9999;
   padding: 20px;
-  overflow-y: auto; /* Permette lo scorrimento verticale */
-  min-height: 100vh; /* Forza una lunghezza minima per il drawer, così se non c'è abbastanza contenuto si adatta alla finestra */
+  overflow-y: auto;
 }
 
-/* Quando il menu è visibile */
 #menuDrawer.open {
-  left: 0;
+  transform: translateX(0);
 }
-
 
 #drawer-overlay {
   position: fixed;
@@ -158,45 +157,28 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* sfondo scuro trasparente */
-  z-index: 9998; /* appena sotto il drawer */
-  display: none; /* nascosto di default */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
 }
 
-/* Quando visibile */
 #drawer-overlay.visible {
   display: block;
 }
 
-/* Colore del testo nel menu */
-#menuDrawer h2, #menuDrawer h3, #menuDrawer li {
-  color: #f0f0f0; /* Colore chiaro per migliorare la leggibilità */
-}
-
-/* Stile per il contenuto del menù */
-#menuDrawer-content {
-  padding: 20px;
-  color: #f0f0f0; /* Colore chiaro del testo */
-  font-size: 16px;
-  overflow-y: auto; /* Permette lo scorrimento solo dentro il contenuto */
-}
-
-/* Colore dei link nel drawer */
-#menuDrawer a {
+#menuDrawer h2, #menuDrawer h3, #menuDrawer li, #menuDrawer a {
   color: #f0f0f0;
-  text-decoration: none;
 }
 
-/* Effetto hover per i link */
 #menuDrawer a:hover {
   text-decoration: underline;
 }
 
-/* Stile per il pulsante laterale */
+/* PULSANTE TOGGLE MENU */
 #menu-toggle {
   position: fixed;
-  top: 20px; /* Posiziona il pulsante in alto */
-  right: 20px; /* Posiziona il pulsante a destra */
+  top: 20px;
+  right: 20px;
   background-color: #6a927d;
   color: white;
   border: none;
@@ -207,7 +189,151 @@ footer {
   z-index: 1000;
 }
 
-/* Animazione hover per il pulsante */
 #menu-toggle:hover {
   background-color: #557662;
+}
+
+/* FISARMONICA MENU */
+.menu-category h3 {
+  font-size: 1.4em;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 10px;
+  color: white; /* scritta bianca */
+  background-color: transparent; /* nessun fondo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  transition: color 0.3s;
+}
+
+.menu-category h3:hover {
+  color: #ddd; /* leggermente più chiaro al passaggio */
+}
+
+/* Lista nascosta/espansa */
+.menu-category ul {
+  list-style-type: none;
+  padding: 0 10px;
+  margin: 0;
+  max-height: 500px; /* Imposta una max-height sufficiente per evitare il taglio */
+  overflow: auto; /* Aggiungi scroll se necessario */
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Piatti */
+.menu-category li {
+  padding: 12px 15px; /* Aumenta il padding per creare bottoni più grandi */
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1); /* semitrasparente sul dark */
+  border-radius: 4px;
+  margin-bottom: 5px;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.menu-category li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icona toggle + / - */
+.toggle-icon {
+  font-size: 1em;
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+/* Ruota o cambia simbolo dinamicamente nel JS */
+.menu-category.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* MOBILE OPTIMIZATION */
+
+/* Impostazioni di base per dispositivi mobili */
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  /* Menu laterale */
+  #menuDrawer {
+    width: 70%;
+  }
+
+  #menu-toggle {
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Modifiche al layout */
+  main {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .menu-category h3 {
+    font-size: 1.2em;
+  }
+
+  /* Ridurre la dimensione delle voci del menu */
+  .menu-category li {
+    font-size: 14px;
+  }
+
+  .menu-category h3 {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  /* Aumenta la spaziatura sui form */
+  form {
+    width: 100%;
+  }
+
+  form input, form button {
+    width: 100%;
+  }
+
+  /* Ridurre la dimensione del footer */
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+/* Ottimizzazione per dispositivi con schermi ancora più piccoli (smartphone) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .menu-category h3 {
+    font-size: 1.1em;
+  }
+
+  .menu-category li {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  #menu-toggle {
+    padding: 8px 16px;
+    font-size: 1.2em;
+  }
+
+  footer {
+    font-size: 0.7em;
+  }
 }

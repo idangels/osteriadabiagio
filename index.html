@@ -32,10 +32,10 @@
   <div id="drawer-overlay"></div>
 
   <!-- Drawer laterale per il menù -->
-  <div id="menuDrawer">
-    <div id="menu" class="menu-section">
-    </div>
-  </div>
+<div id="menuDrawer">
+  <h2 id="menu-title"></h2>
+  <div id="menu-content"></div> <!-- AGGIUNTO QUESTO -->
+</div>
 
   <main>
     <section id="chi-siamo">
@@ -45,32 +45,32 @@
       </p>
     </section>
 
-<section id="prenotazioni">
-  <h2 data-key="prenota-titolo">Prenota un tavolo</h2>
-<p data-key="prenota-intro">Per prenotare compila il modulo oppure usa uno dei nostri <a href="#contatti">contatti</a>!</p>
+    <section id="prenotazioni">
+      <h2 data-key="prenota-titolo">Prenota un tavolo</h2>
+      <p data-key="prenota-intro">Per prenotare compila il modulo oppure usa uno dei nostri <a href="#contatti">contatti</a>!</p>
 
-<form action="https://formsubmit.co/osteriadabiagiopisa@gmail.com" method="POST">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://idangels.github.io/osteriadabiagio/success.html">
+      <form action="https://formsubmit.co/osteriadabiagiopisa@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://idangels.github.io/osteriadabiagio/success.html">
 
-  <label for="name" data-key="prenota-nome">Nome:</label>
-  <input type="text" id="name" name="Nome" required>
+        <label for="name" data-key="prenota-nome">Nome:</label>
+        <input type="text" id="name" name="Nome" required>
 
-  <label for="phone" data-key="prenota-telefono">Telefono:</label>
-  <input type="tel" id="phone" name="Telefono" required>
+        <label for="phone" data-key="prenota-telefono">Telefono:</label>
+        <input type="tel" id="phone" name="Telefono" required>
 
-  <label for="date" data-key="prenota-data">Data:</label>
-  <input type="date" id="date" name="Data" required>
+        <label for="date" data-key="prenota-data">Data:</label>
+        <input type="date" id="date" name="Data" required>
 
-  <label for="time" data-key="prenota-ora">Ora:</label>
-  <input type="time" id="time" name="Ora" required>
+        <label for="time" data-key="prenota-ora">Ora:</label>
+        <input type="time" id="time" name="Ora" required>
 
-  <label for="people" data-key="prenota-persone">Numero di persone:</label>
-  <input type="number" id="people" name="Numero di persone" min="1" max="50" required>
+        <label for="people" data-key="prenota-persone">Numero di persone:</label>
+        <input type="number" id="people" name="Numero di persone" min="1" max="50" required>
 
-  <button type="submit" data-key="prenota-btn">Invia richiesta</button>
-</form>
-</section>
+        <button type="submit" data-key="prenota-btn">Invia richiesta</button>
+      </form>
+    </section>
 
     <section id="contatti">
       <h2 data-key="contatti-titolo">Contatti</h2>
@@ -85,11 +85,25 @@
     <p data-key="footer">© 2024 Osteria da Biagio - Tutti i diritti riservati</p>
   </footer>
 
+<!-- Modale per il piatto -->
+<div id="dish-modal" class="modal">
+    <div class="modal-content">
+        <img class="modal-img" src="" alt="">
+        <h2 class="modal-title"></h2>
+        <p class="modal-description"></p>
+        <!-- <button class="close-btn">Close</button> -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Script con i dati del menù multilingua -->
+  <script src="menu.js"></script>
+
   <!-- Script per la gestione delle lingue -->
   <script src="lang-data.js"></script>
 
-  <!-- Script per il menu laterale -->
-  <script src="menu.js"></script>
-
+  <!-- Script per la gestione del menù laterale -->
+  <script src="panel.js"></script>
 </body>
 </html>
