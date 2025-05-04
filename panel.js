@@ -76,8 +76,14 @@ function caricaMenu() {
     sezione.items.forEach(piatto => {
       const piattoElement = document.createElement('li');
       piattoElement.className = 'piatto-item';
-      piattoElement.textContent = piatto.nome;
       piattoElement.dataset.piattoId = piatto.id;
+	  
+	// Crea elemento in grassetto per il nome
+	  const piattoNome = document.createElement('span');
+      piattoNome.className = 'piatto-nome';
+      piattoNome.textContent = piatto.nome;
+      piattoNome.style.fontWeight = 'bold';
+      piattoElement.appendChild(piattoNome);
 
       // Aggiungi la descrizione (può essere un tooltip, una riga sotto, etc.)
       const piattoDescrizione = document.createElement('p');

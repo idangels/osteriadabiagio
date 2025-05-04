@@ -42,7 +42,12 @@ const menuData = {
       title: "Bevande",
       items: [
         { id: "bere1", nome: "Acqua", descrizione: "", prezzo: "€2" },
-        { id: "bere2", nome: "Vino della Casa", descrizione: "", prezzo: "da €13" }
+      ]
+    },
+	{
+      title: "Vini",
+      items: [
+        { id: "vino1", nome: "Vino della Casa", descrizione: "", prezzo: "da €13" }
       ]
     }
   ],
@@ -90,9 +95,14 @@ const menuData = {
       title: "Drinks",
       items: [
         { id: "bere1", nome: "Water", descrizione: "", prezzo: "€2" },
-        { id: "bere2", nome: "House Wine", descrizione: "", prezzo: "from €13" }
       ]
-    }
+    },
+	{
+      title: "Wines",
+      items: [
+        { id: "vino1", nome: "House Wine", descrizione: "", prezzo: "from €13" }
+      ]
+    }	
 	],
   
   fr: [
@@ -138,9 +148,14 @@ const menuData = {
       title: "Boissons",
       items: [
         { id: "bere1", nome: "Eau", descrizione: "", prezzo: "€2" },
-        { id: "bere2", nome: "Vin maison", descrizione: "", prezzo: "à partir de €13" }
       ]
-    }
+    },
+    {
+      title: "Vins",
+      items: [
+        { id: "vino1", nome: "Vin maison", descrizione: "", prezzo: "à partir de €13" }
+      ]
+    }	
   ],
 
   de: [
@@ -186,9 +201,14 @@ const menuData = {
       title: "Getränke",
       items: [
         { id: "bere1", nome: "Wasser", descrizione: "", prezzo: "€2" },
-        { id: "bere2", nome: "Hauswein", descrizione: "", prezzo: "ab €13" }
       ]
-    }
+    },
+    {
+      title: "Weine",
+      items: [
+        { id: "vino1", nome: "Hauswein", descrizione: "", prezzo: "ab €13" }
+      ]
+    }	
   ],
 
   es: [
@@ -233,9 +253,14 @@ const menuData = {
     {
       title: "Bebidas",
       items: [
-        { id: "bere1", id: "bere1", nome: "Agua", descrizione: "", prezzo: "€2" },
-        { id: "bere2", nome: "Vino de la casa", descrizione: "", prezzo: "desde €13" }
+        { id: "bere1", nome: "Agua", descrizione: "", prezzo: "€2" },
       ]
-    }
+    },
+    {
+      title: "Vinos",
+      items: [
+        { id: "vino1", nome: "Vino de la casa", descrizione: "", prezzo: "desde €13" }
+      ]
+    }	
   ]
 };
