@@ -142,7 +142,7 @@ footer {
   height: 100%;
   background-color: #333;
   transition: transform 0.3s ease-in-out;
-  z-index: 9999;
+  z-index: 2000;
   padding: 20px;
   overflow-y: auto;
 }
@@ -158,7 +158,7 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
+  z-index: 1500;
   display: none;
 }
 
@@ -199,8 +199,8 @@ footer {
   cursor: pointer;
   margin-bottom: 0.5em;
   padding: 10px;
-  color: white; /* scritta bianca */
-  background-color: transparent; /* nessun fondo */
+  color: white;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -209,24 +209,22 @@ footer {
 }
 
 .menu-category h3:hover {
-  color: #ddd; /* leggermente più chiaro al passaggio */
+  color: #ddd;
 }
 
-/* Lista nascosta/espansa */
 .menu-category ul {
   list-style-type: none;
   padding: 0 10px;
   margin: 0;
-  max-height: 500px; /* Imposta una max-height sufficiente per evitare il taglio */
-  overflow: auto; /* Aggiungi scroll se necessario */
+  max-height: 500px;
+  overflow: auto;
   transition: max-height 0.3s ease-in-out;
 }
 
-/* Piatti */
 .menu-category li {
-  padding: 12px 15px; /* Aumenta il padding per creare bottoni più grandi */
+  padding: 12px 15px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1); /* semitrasparente sul dark */
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   margin-bottom: 5px;
   color: white;
@@ -237,110 +235,20 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Icona toggle + / - */
 .toggle-icon {
   font-size: 1em;
   margin-left: 10px;
   transition: transform 0.3s;
 }
 
-/* Ruota o cambia simbolo dinamicamente nel JS */
 .menu-category.open .toggle-icon {
   transform: rotate(180deg);
 }
 
-/* MOBILE OPTIMIZATION */
-
-/* Impostazioni di base per dispositivi mobili */
-@media (max-width: 768px) {
-  body {
-    padding: 1em;
-  }
-
-  /* Menu laterale */
-  #menuDrawer {
-    width: 70%;
-  }
-
-  #menu-toggle {
-    top: 15px;
-    right: 15px;
-  }
-
-  /* Modifiche al layout */
-  main {
-    padding: 10px;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  .menu-category h3 {
-    font-size: 1.2em;
-  }
-
-  /* Ridurre la dimensione delle voci del menu */
-  .menu-category li {
-    font-size: 14px;
-  }
-
-  .menu-category h3 {
-    font-size: 1.2em;
-    padding: 10px;
-  }
-
-  /* Aumenta la spaziatura sui form */
-  form {
-    width: 100%;
-  }
-
-  form input, form button {
-    width: 100%;
-  }
-
-  /* Ridurre la dimensione del footer */
-  footer {
-    font-size: 0.8em;
-  }
-}
-
-/* Ottimizzazione per dispositivi con schermi ancora più piccoli (smartphone) */
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
-
-  .menu-category h3 {
-    font-size: 1.1em;
-  }
-
-  .menu-category li {
-    font-size: 13px;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  #menu-toggle {
-    padding: 8px 16px;
-    font-size: 1.2em;
-  }
-
-  footer {
-    font-size: 0.7em;
-  }
-}
-
+/* MODALE */
 .modal {
   position: fixed;
-  z-index: 3000;
+  z-index: 3000; /* più alto del drawer */
   left: 0;
   top: 0;
   width: 100%;
@@ -378,4 +286,80 @@ footer {
   right: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  #menuDrawer {
+    width: 70%;
+  }
+
+  #menu-toggle {
+    top: 15px;
+    right: 15px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .menu-category h3 {
+    font-size: 1.2em;
+  }
+
+  .menu-category li {
+    font-size: 14px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form input, form button {
+    width: 100%;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .menu-category h3 {
+    font-size: 1.1em;
+  }
+
+  .menu-category li {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  #menu-toggle {
+    padding: 8px 16px;
+    font-size: 1.2em;
+  }
+
+  footer {
+    font-size: 0.7em;
+  }
 }
