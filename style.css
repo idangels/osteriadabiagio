@@ -158,7 +158,7 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
+  z-index: 2000;
   display: none;
 }
 
@@ -336,4 +336,46 @@ footer {
   footer {
     font-size: 0.7em;
   }
+}
+
+.modal {
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

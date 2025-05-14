@@ -1,7 +1,13 @@
-// Drawer apertura/chiusura
+// Apertura/chiusura drawer
 document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.getElementById('menuDrawer')?.classList.toggle('open');
-  document.getElementById('drawer-overlay')?.classList.toggle('visible');
+  const drawer = document.getElementById('menuDrawer');
+  const overlay = document.getElementById('drawer-overlay');
+  drawer?.classList.toggle('open');
+  overlay?.classList.toggle('visible');
+
+  if (drawer?.classList.contains('open')) {
+    caricaMenu();
+  }
 });
 
 document.getElementById('drawer-overlay').addEventListener('click', () => {
@@ -9,7 +15,7 @@ document.getElementById('drawer-overlay').addEventListener('click', () => {
   document.getElementById('drawer-overlay')?.classList.remove('visible');
 });
 
-// Funzione per ottenere i dettagli del piatto
+// Ottieni dettagli di un piatto tramite ID
 function getPiattoInfo(piattoId) {
   const lingua = document.documentElement.lang;
   const sezioni = menuData?.[lingua] || [];
@@ -21,28 +27,31 @@ function getPiattoInfo(piattoId) {
   return null;
 }
 
-// Mostra dettagli piatto nella modale
+// Costruisci URL immagine piatto
+function getImageUrlById(id) {
+  return `img/${id}.jpg`;
+}
+
+// Mostra i dettagli del piatto in una modale
 function mostraDettagliPiatto(piattoId) {
   const piatto = getPiattoInfo(piattoId);
   if (!piatto) return;
 
-  const modale = document.getElementById('modale');
-  const modaleImg = document.getElementById('modale-img');
-  const modaleNome = document.getElementById('modale-nome');
-  const modaleDescrizione = document.getElementById('modale-descrizione');
-  const modalePrezzo = document.getElementById('modale-prezzo');
+  const modale = document.getElementById('dish-modal');
+  const modaleImg = document.getElementById('modal-img');
+  const modaleNome = document.getElementById('modal-title');
+  const modaleDescrizione = document.getElementById('modal-description');
+  const modalePrezzo = document.getElementById('modal-price');
 
-  if (!modale || !modaleImg || !modaleNome || !modaleDescrizione || !modalePrezzo) return;
-
-  modaleImg.src = piatto.immagine || '';
+  modaleImg.src = getImageUrlById(piatto.id);
   modaleImg.alt = piatto.nome;
   modaleNome.textContent = piatto.nome;
   modaleDescrizione.textContent = piatto.descrizione;
   modalePrezzo.textContent = piatto.prezzo;
-  modale.style.display = 'flex';
+  modale.classList.remove('hidden');
 }
 
-// Caricamento dinamico del menu (accordion + multilingua)
+// Carica dinamicamente il menu nel drawer (accordion + multilingua)
 function caricaMenu() {
   const lingua = document.documentElement.lang;
   const sezioni = menuData?.[lingua] || [];
@@ -58,7 +67,6 @@ function caricaMenu() {
     const categoriaTitolo = document.createElement('h3');
     categoriaTitolo.className = 'menu-section-title';
 
-    // Crea titolo con icona toggle ➕/➖
     const toggleIcon = document.createElement('span');
     toggleIcon.className = 'toggle-icon';
     toggleIcon.textContent = '➕';
@@ -72,38 +80,31 @@ function caricaMenu() {
     listaPiatti.style.overflow = 'hidden';
     listaPiatti.style.transition = 'max-height 0.3s ease';
 
-    // Aggiunge ogni piatto
     sezione.items.forEach(piatto => {
       const piattoElement = document.createElement('li');
       piattoElement.className = 'piatto-item';
       piattoElement.dataset.piattoId = piatto.id;
-	  
-	// Crea elemento in grassetto per il nome
-	  const piattoNome = document.createElement('span');
+
+      const piattoNome = document.createElement('span');
       piattoNome.className = 'piatto-nome';
       piattoNome.textContent = piatto.nome;
       piattoNome.style.fontWeight = 'bold';
       piattoElement.appendChild(piattoNome);
 
-      // Aggiungi la descrizione (può essere un tooltip, una riga sotto, etc.)
       const piattoDescrizione = document.createElement('p');
       piattoDescrizione.className = 'piatto-descrizione';
       piattoDescrizione.textContent = piatto.descrizione;
+      piattoElement.appendChild(piattoDescrizione);
 
-      // Aggiungi il prezzo
       const piattoPrezzo = document.createElement('p');
       piattoPrezzo.className = 'piatto-prezzo';
       piattoPrezzo.textContent = piatto.prezzo;
-
-      // Aggiungi descrizione e prezzo al piatto
-      piattoElement.appendChild(piattoDescrizione);
       piattoElement.appendChild(piattoPrezzo);
 
       piattoElement.addEventListener('click', () => mostraDettagliPiatto(piatto.id));
       listaPiatti.appendChild(piattoElement);
     });
 
-    // Aggiunge evento per aprire/chiudere la sezione
     categoriaTitolo.addEventListener('click', () => {
       const isOpen = listaPiatti.classList.contains('aperto');
 
@@ -124,27 +125,21 @@ function caricaMenu() {
   });
 }
 
-// Chiusura modale piatto
-document.getElementById('close-modale')?.addEventListener('click', () => {
-  const modale = document.getElementById('modale');
-  if (modale) modale.style.display = 'none';
+// Chiusura modale
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('dish-modal').classList.add('hidden');
 });
 
-// Caricamento al DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  caricaMenu();
-});
-
-// Funzione per cambiare la lingua
+// Cambia lingua
 function cambiaLingua() {
   const linguaSelezionata = document.getElementById('lang-switcher').value;
-  
-  // Cambia l'attributo lang del documento
   document.documentElement.lang = linguaSelezionata;
-  
-  // Ricarica il menu nella nuova lingua
   caricaMenu();
 }
 
-// Ascolta il cambio della lingua
 document.getElementById('lang-switcher').addEventListener('change', cambiaLingua);
+
+// Al caricamento del DOM
+document.addEventListener('DOMContentLoaded', () => {
+  caricaMenu();
+});

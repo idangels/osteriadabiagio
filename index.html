@@ -32,7 +32,7 @@
   <div id="drawer-overlay"></div>
 
   <!-- Drawer laterale per il menù -->
-<div id="menuDrawer">
+<div id="menuDrawer" class="drawer">
   <h2 id="menu-title"></h2>
   <div id="menu-content"></div> <!-- AGGIUNTO QUESTO -->
 </div>
@@ -86,12 +86,13 @@
   </footer>
 
 <!-- Modale per il piatto -->
-<div id="dish-modal" class="modal">
+<div id="dish-modal" class="modal hidden">
     <div class="modal-content">
-        <img class="modal-img" src="" alt="">
-        <h2 class="modal-title"></h2>
-        <p class="modal-description"></p>
-        <!-- <button class="close-btn">Close</button> -->
+	    <span class="close-button" id="modal-close">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+		<p id="modal-price"></p>
     </div>
 </div>
 
