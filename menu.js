@@ -213,7 +213,7 @@ const menuData = {
 
   es: [
     {
-      title: "Entrantes",
+      title: "Entradas",
       items: [
         { id: "antipasto1", nome: "Tabla Toscana", descrizione: "Embutidos y quesos", prezzo: "€18" },
         { id: "antipasto2", nome: "Caprese", descrizione: "Mozzarella de búfala y tomates", prezzo: "€10" }
